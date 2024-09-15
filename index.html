@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,7 +132,6 @@
                     <input type="number" id="E_current" placeholder=" ">
                     <div class="placeholder">\(E_{\text{current}}\)</div>
                 </div>
-                <span class="unit">mm</span>
             </div>
             \( \times \)
             <span class="fraction">
@@ -156,7 +155,7 @@
                 </span>
             </span>
         </div>
-        <button onclick="calculate()">計算</button>
+        <button onclick="calculate()">Calculate</button>
         <div id="result"></div>
     </div>
 
@@ -167,13 +166,13 @@
             const L_expected = parseFloat(document.getElementById('L_expected').value);
             
             if (isNaN(E_current) || isNaN(L_measured) || isNaN(L_expected)) {
-                document.getElementById('result').innerHTML = '請輸入有效的數字';
+                document.getElementById('result').innerHTML = 'Please enter valid numbers';
                 return;
             }
             
             const E_new = E_current * (L_measured / L_expected);
             
-            document.getElementById('result').innerHTML = `\\(E_{\\text{new}} = ${E_new.toFixed(2)}\\text{ mm}\\)`;
+            document.getElementById('result').innerHTML = `\\(E_{\\text{new}} = ${E_new.toFixed(2)}\\)`;
             MathJax.typeset();
         }
 
